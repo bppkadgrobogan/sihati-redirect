@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemberitahuan Perpindahan SIHATI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+            animation: slideIn 0.6s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .icon {
+            text-align: center;
+            font-size: 60px;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        
+        .alert-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-left: 5px solid #ff6b6b;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .alert-box h2 {
+            color: #c92a2a;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .new-address {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+            border: 2px dashed #667eea;
+        }
+        
+        .new-address a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            word-break: break-all;
+        }
+        
+        .new-address a:hover {
+            text-decoration: underline;
+        }
+        
+        .archive-note {
+            background: #fff3bf;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #ffd43b;
+        }
+        
+        .archive-note p {
+            color: #856404;
+            margin: 0;
+        }
+        
+        .whatsapp-btn {
+            display: block;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            text-align: center;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+        
+        .whatsapp-icon {
+            font-size: 20px;
+            margin-right: 8px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        p {
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .new-address a {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">🚀</div>
+        
+        <h1>Pemberitahuan Penting!</h1>
+        
+        <div class="alert-box">
+            <h2>⚠️ Perpindahan Alamat</h2>
+            <p><strong>Mulai tanggal 1 Januari 2026</strong>, SIHATI akan pindah ke alamat baru:</p>
+        </div>
+        
+        <div class="info-box">
+            <div class="new-address">
+                <p style="margin-bottom: 10px; color: #667eea; font-weight: bold;">🌐 Alamat Baru:</p>
+                <a href="https://sihati.bppkad.grobogan.go.id" target="_blank">
+                    sihati.bppkad.grobogan.go.id
+                </a>
+            </div>
+            
+            <div class="archive-note">
+                <p>📁 <strong>Catatan:</strong> Semua data pendataan yang lama telah disimpan dengan aman sebagai arsip.</p>
+            </div>
+        </div>
+        
+        <p style="text-align: center; margin-bottom: 15px;">
+            <strong>📢 Untuk informasi lebih lanjut dan update terbaru,</strong><br>
+            silakan bergabung dengan grup WhatsApp kami:
+        </p>
+        
+        <a href="https://chat.whatsapp.com/JdxtNud33Nj2W6sgs9OT9A" target="_blank" class="whatsapp-btn">
+            <span class="whatsapp-icon">💬</span>
+            Gabung Grup WhatsApp
+        </a>
+        
+        <div class="footer">
+            <p>Terima kasih atas perhatian dan kerjasamanya! 🙏</p>
+            <p style="font-size: 12px; margin-top: 10px;">BPPKAD Grobogan</p>
+        </div>
+    </div>
+</body>
+</html>
