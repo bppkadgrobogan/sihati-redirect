@@ -19,151 +19,298 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        body::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            bottom: -150px;
+            left: -150px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(20px); }
         }
         
         .container {
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            max-width: 600px;
+            border-radius: 25px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+            max-width: 700px;
             width: 100%;
-            padding: 40px;
-            animation: slideIn 0.6s ease-out;
+            padding: 50px 45px;
+            animation: slideIn 0.8s ease-out;
+            position: relative;
+            z-index: 1;
         }
         
         @keyframes slideIn {
             from {
                 opacity: 0;
-                transform: translateY(-30px);
+                transform: translateY(-40px) scale(0.95);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) scale(1);
             }
         }
         
-        .icon {
+        .header {
             text-align: center;
-            font-size: 60px;
-            margin-bottom: 20px;
-            animation: bounce 2s infinite;
+            margin-bottom: 35px;
         }
         
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        .icon-wrapper {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 25px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+            }
+        }
+        
+        .icon-wrapper svg {
+            width: 60px;
+            height: 60px;
+            fill: white;
         }
         
         h1 {
-            color: #667eea;
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 28px;
+            color: #2d3748;
+            margin-bottom: 12px;
+            font-size: 32px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            color: #718096;
+            font-size: 16px;
         }
         
         .alert-box {
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-            border-left: 5px solid #ff6b6b;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 25px;
+            background: linear-gradient(135deg, #fed7d7 0%, #fc8181 100%);
+            border-left: 6px solid #e53e3e;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(229, 62, 62, 0.2);
         }
         
         .alert-box h2 {
-            color: #c92a2a;
-            margin-bottom: 10px;
-            font-size: 20px;
+            color: #742a2a;
+            margin-bottom: 12px;
+            font-size: 22px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .alert-box p {
+            color: #742a2a;
+            line-height: 1.8;
         }
         
         .info-box {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 25px;
+            background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(49, 151, 149, 0.15);
         }
         
         .new-address {
             background: white;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
             text-align: center;
-            border: 2px dashed #667eea;
+            border: 3px solid #667eea;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .new-address::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            to {
+                left: 100%;
+            }
+        }
+        
+        .label {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
         
         .new-address a {
             color: #667eea;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
+            font-weight: 700;
+            font-size: 22px;
             word-break: break-all;
+            display: inline-block;
+            position: relative;
+            transition: all 0.3s ease;
         }
         
         .new-address a:hover {
-            text-decoration: underline;
+            color: #764ba2;
+            transform: scale(1.05);
         }
         
         .archive-note {
-            background: #fff3bf;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            border-left: 4px solid #ffd43b;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0 0 0;
+            border-left: 5px solid #38b2ac;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
         }
         
         .archive-note p {
-            color: #856404;
+            color: #2c7a7b;
             margin: 0;
+            display: flex;
+            align-items: start;
+            gap: 10px;
+            line-height: 1.8;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .cta-section p {
+            color: #2d3748;
+            font-size: 16px;
+            margin-bottom: 20px;
+            line-height: 1.8;
         }
         
         .whatsapp-btn {
-            display: block;
+            display: inline-block;
             background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
             color: white;
             text-align: center;
-            padding: 15px 30px;
+            padding: 18px 40px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-            margin-top: 25px;
+            font-weight: 700;
+            font-size: 18px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
         }
         
         .whatsapp-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
         }
         
-        .whatsapp-icon {
-            font-size: 20px;
-            margin-right: 8px;
+        .whatsapp-btn svg {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 10px;
+            fill: white;
         }
         
         .footer {
             text-align: center;
-            margin-top: 30px;
-            color: #666;
-            font-size: 14px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+        }
+        
+        .footer p {
+            color: #4a5568;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
+        .footer .org-name {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 18px;
         }
         
         p {
-            line-height: 1.6;
-            color: #333;
-            margin-bottom: 10px;
+            line-height: 1.8;
+            color: #2d3748;
         }
         
-        @media (max-width: 480px) {
+        strong {
+            font-weight: 700;
+        }
+        
+        @media (max-width: 768px) {
             .container {
-                padding: 25px;
+                padding: 35px 25px;
             }
             
             h1 {
-                font-size: 24px;
+                font-size: 26px;
             }
             
             .new-address a {
+                font-size: 18px;
+            }
+            
+            .whatsapp-btn {
+                padding: 16px 30px;
                 font-size: 16px;
             }
         }
@@ -171,41 +318,66 @@
 </head>
 <body>
     <div class="container">
-        <div class="icon">🚀</div>
-        
-        <h1>Pemberitahuan Penting!</h1>
+        <div class="header">
+            <div class="icon-wrapper">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 18c-4.41 0-8-3.59-8-8V8.3l8-4.57 8 4.57V12c0 4.41-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+                </svg>
+            </div>
+            <h1>Pemberitahuan Penting!</h1>
+            <p class="subtitle">Informasi Perpindahan Layanan SIHATI</p>
+        </div>
         
         <div class="alert-box">
-            <h2>⚠️ Perpindahan Alamat</h2>
-            <p><strong>Mulai tanggal 1 Januari 2026</strong>, SIHATI akan pindah ke alamat baru:</p>
+            <h2>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+                </svg>
+                Perpindahan Alamat
+            </h2>
+            <p><strong>Mulai tanggal 1 Januari 2026</strong>, layanan SIHATI akan dipindahkan ke alamat baru untuk memberikan pelayanan yang lebih baik.</p>
         </div>
         
         <div class="info-box">
             <div class="new-address">
-                <p style="margin-bottom: 10px; color: #667eea; font-weight: bold;">🌐 Alamat Baru:</p>
+                <p class="label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    Alamat Baru
+                </p>
                 <a href="https://sihati.bppkad.grobogan.go.id" target="_blank">
                     sihati.bppkad.grobogan.go.id
                 </a>
             </div>
             
             <div class="archive-note">
-                <p>📁 <strong>Catatan:</strong> Semua data pendataan yang lama telah disimpan dengan aman sebagai arsip.</p>
+                <p>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink: 0;">
+                        <path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V6h5.17l2 2H20v10z"/>
+                    </svg>
+                    <span><strong>Catatan Penting:</strong> Semua data pendataan yang lama telah disimpan dengan aman sebagai arsip dan dapat diakses kembali jika diperlukan.</span>
+                </p>
             </div>
         </div>
         
-        <p style="text-align: center; margin-bottom: 15px;">
-            <strong>📢 Untuk informasi lebih lanjut dan update terbaru,</strong><br>
-            silakan bergabung dengan grup WhatsApp kami:
-        </p>
-        
-        <a href="https://chat.whatsapp.com/JdxtNud33Nj2W6sgs9OT9A" target="_blank" class="whatsapp-btn">
-            <span class="whatsapp-icon">💬</span>
-            Gabung Grup WhatsApp
-        </a>
+        <div class="cta-section">
+            <p>
+                <strong>Untuk informasi lebih lanjut, update terbaru, dan bantuan teknis,</strong><br>
+                silakan bergabung dengan grup WhatsApp resmi kami
+            </p>
+            
+            <a href="https://chat.whatsapp.com/JdxtNud33Nj2W6sgs9OT9A" target="_blank" class="whatsapp-btn">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Gabung Grup WhatsApp
+            </a>
+        </div>
         
         <div class="footer">
-            <p>Terima kasih atas perhatian dan kerjasamanya! 🙏</p>
-            <p style="font-size: 12px; margin-top: 10px;">BPPKAD Grobogan</p>
+            <p>Terima kasih atas perhatian dan kerjasamanya!</p>
+            <p class="org-name">BPPKAD Grobogan</p>
         </div>
     </div>
 </body>
